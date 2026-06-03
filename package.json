@@ -1,0 +1,30 @@
+{
+  "name": "zeroleak-llm-proxy",
+  "version": "0.1.0",
+  "description": "OpenAI-compatible privacy proxy that redacts secrets and PII before LLM API calls.",
+  "type": "module",
+  "main": "src/server.js",
+  "bin": {
+    "zeroleak-redact": "src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "redact": "node src/cli.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "llm",
+    "privacy",
+    "openai",
+    "proxy",
+    "redaction",
+    "security",
+    "dlp"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
+
