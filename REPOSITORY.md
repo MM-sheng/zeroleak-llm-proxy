@@ -64,11 +64,7 @@ Recommended future cleanup:
 
 ## Local History
 
-ZeroLeak was created locally on this machine under:
-
-```text
-/Users/m/Documents/Codex/2026-06-03/api-2
-```
+ZeroLeak was created locally on this machine in the Codex workspace.
 
 The initial local Git commit is:
 
