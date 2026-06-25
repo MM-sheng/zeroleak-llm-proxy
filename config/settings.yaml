@@ -1,0 +1,18 @@
+trading:
+  live_trading: false
+  paper_only: true
+  bankroll_usd: 1000
+  max_single_trade_risk_fraction: 0.01
+  max_btc_aggregate_risk_fraction: 0.10
+  daily_loss_stop_fraction: 0.03
+  weekly_loss_stop_fraction: 0.08
+
+data:
+  btc_symbol: BTC-USD
+  timezone: UTC
+
+polymarket:
+  read_only: true
+  min_liquidity_usd: 0
+  request_timeout_seconds: 20
+

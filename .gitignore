@@ -1,0 +1,29 @@
+# Python caches
+__pycache__/
+.pycache/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Local data and generated runtime artifacts
+data/raw/
+data/processed/
+data/paper_trading/
+data/updown_cache/
+data/paper/
+
+# Generated reports can be committed selectively; keep the research report tracked.
+reports/daily_report.md
+
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/

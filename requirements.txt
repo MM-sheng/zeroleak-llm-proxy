@@ -1,0 +1,12 @@
+pandas
+numpy
+requests
+python-dotenv
+pydantic
+pyyaml
+pytest
+yfinance
+scipy
+scikit-learn
+matplotlib
+

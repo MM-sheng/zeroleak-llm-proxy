@@ -1,0 +1,65 @@
+"""Backtesting modules."""
+
+from src.backtest.backtester import (
+    TouchResolution,
+    assert_no_future_data,
+    estimate_prior_volatility,
+    resolve_touch_market,
+)
+from src.backtest.metrics import BacktestMetrics, calculate_binary_trade_pnl, summarize_backtest_metrics
+from src.backtest.synthetic_market_generator import (
+    SyntheticBTCMarket,
+    generate_synthetic_btc_markets,
+    generate_weekly_touch_markets,
+)
+from src.backtest.updown_market_backtest import (
+    BTCCandle,
+    CachedUpDownBacktestResult,
+    UpDownBacktestEntry,
+    UpDownResolution,
+    UpDownTrade,
+    UpDownWindow,
+    build_recent_updown_slugs,
+    fetch_coinbase_candles,
+    fetch_data_api_trades,
+    fetch_gamma_event_by_slug,
+    parse_coinbase_candles,
+    parse_updown_trades,
+    resolve_updown_window,
+    run_cached_updown_backtest,
+    simulate_updown_entries,
+    summarize_updown_entries,
+    summarize_updown_entries_by_group,
+    window_from_gamma_event,
+)
+
+__all__ = [
+    "BTCCandle",
+    "CachedUpDownBacktestResult",
+    "SyntheticBTCMarket",
+    "TouchResolution",
+    "UpDownBacktestEntry",
+    "UpDownResolution",
+    "UpDownTrade",
+    "UpDownWindow",
+    "BacktestMetrics",
+    "assert_no_future_data",
+    "build_recent_updown_slugs",
+    "calculate_binary_trade_pnl",
+    "estimate_prior_volatility",
+    "fetch_coinbase_candles",
+    "fetch_data_api_trades",
+    "fetch_gamma_event_by_slug",
+    "generate_synthetic_btc_markets",
+    "generate_weekly_touch_markets",
+    "parse_coinbase_candles",
+    "parse_updown_trades",
+    "resolve_updown_window",
+    "resolve_touch_market",
+    "run_cached_updown_backtest",
+    "simulate_updown_entries",
+    "summarize_backtest_metrics",
+    "summarize_updown_entries",
+    "summarize_updown_entries_by_group",
+    "window_from_gamma_event",
+]
