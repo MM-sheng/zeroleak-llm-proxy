@@ -4,17 +4,18 @@ OpenAI-compatible privacy proxy for LLM API calls. It redacts secrets and person
 
 This project is an MVP for developers who want to use cloud LLM APIs without accidentally sending API keys, tokens, emails, phone numbers, database URLs, or private keys to the model provider.
 
-## Repository Map
+## Repository Note
 
-This GitHub repository currently has two separate project lines:
+This repository is for ZeroLeak LLM Proxy.
 
-| Branch | Project | Purpose |
-|---|---|---|
-| `main` | ZeroLeak LLM Proxy | OpenAI-compatible privacy/redaction proxy for LLM API calls |
-| `btc-pm-strategy` | BTC Polymarket research system | Paper-only BTC/Polymarket research, backtesting, and reports |
+A temporary `btc-pm-strategy` branch was previously used to store a separate
+BTC/Polymarket research project. That project now lives in its own repository:
 
-The default branch is `main`, and this README describes ZeroLeak only. See
-`REPOSITORY.md` for the full repository-level map and branch cleanup notes.
+```text
+https://github.com/MM-sheng/btc-pm-strategy
+```
+
+See `REPOSITORY.md` for the repository cleanup notes.
 
 ## What It Does
 

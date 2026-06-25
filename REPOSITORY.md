@@ -1,6 +1,6 @@
 # Repository Map
 
-This repository currently contains two different project lines on separate branches.
+This repository is the canonical home for ZeroLeak LLM Proxy.
 
 GitHub repository:
 
@@ -8,12 +8,12 @@ GitHub repository:
 https://github.com/MM-sheng/zeroleak-llm-proxy
 ```
 
-## Branches
+## Current Branches
 
 | Branch | Project | Status | Notes |
 |---|---|---|---|
 | `main` | ZeroLeak LLM Proxy | Public MVP | Default branch. Keep this branch focused on the privacy proxy. |
-| `btc-pm-strategy` | BTC Polymarket research system | Paper-only research branch | Separate project uploaded here temporarily. Should move to its own repo if it continues. |
+| `btc-pm-strategy` | BTC Polymarket research system | Migrated | Historical temporary branch. Canonical repo is now `MM-sheng/btc-pm-strategy`. |
 
 ## Main Project: ZeroLeak LLM Proxy
 
@@ -41,24 +41,26 @@ Sensitive strings currently detected include:
 - US SSNs
 - China ID numbers
 
-## Secondary Branch: BTC Polymarket Research
+## Migrated Project: BTC Polymarket Research
 
-The `btc-pm-strategy` branch is not part of the ZeroLeak product. It contains a
-paper-only BTC/Polymarket strategy research system with backtests, reports, and
-governance files.
+The BTC/Polymarket strategy research system is not part of the ZeroLeak product.
+It has been moved to a dedicated repository:
 
-Branch URL:
+Canonical repository:
 
 ```text
-https://github.com/MM-sheng/zeroleak-llm-proxy/tree/btc-pm-strategy
+https://github.com/MM-sheng/btc-pm-strategy
 ```
+
+The old `btc-pm-strategy` branch in this repository should be treated as a
+historical migration source only. Do not continue development there.
 
 Recommended future cleanup:
 
-1. Create a dedicated repository, for example `MM-sheng/btc-pm-strategy`.
-2. Push the `btc-pm-strategy` branch contents there as `main`.
-3. Keep this repository's `main` branch only for ZeroLeak.
-4. Delete or archive the temporary BTC branch only after confirming the new repo is complete.
+1. Confirm `https://github.com/MM-sheng/btc-pm-strategy` has all expected files.
+2. Update any bookmarks or Codex references to the dedicated repository.
+3. Delete the temporary `btc-pm-strategy` branch from this repository only after
+   confirming no active workflow depends on it.
 
 ## Local History
 
@@ -83,4 +85,3 @@ The GitHub repository was created on 2026-06-04.
 - Keep ZeroLeak docs and code focused on privacy proxy behavior.
 - Add tests when changing redaction patterns, restore behavior, or API handling.
 - Run `npm test` before pushing changes to `main`.
-
