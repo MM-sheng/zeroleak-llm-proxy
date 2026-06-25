@@ -1,32 +1,57 @@
 # BTC Polymarket Probability & Paper Trading Research System
 
-Professional research scaffold for estimating BTC-related Polymarket event probabilities and running paper-only strategy analysis.
+Paper-only research system for BTC-related Polymarket markets. It scans read-only
+market data, parses BTC market questions, estimates probabilities, compares model
+probability with market prices, sizes paper decisions, backtests strategies, and
+generates Markdown reports.
 
-This project is not a gambling bot and is not investment advice. It does not place real trades.
+This project is not a gambling bot and is not investment advice. It does not
+place real trades.
 
-## Current Supported Functionality
+## Repository Location
 
-- Project governance files.
-- Long-term task and context files for multi-session Codex handoff.
-- Python package skeleton.
-- Config placeholders.
-- Paper-only safety defaults.
-- BTC historical price loading through `BTCPriceLoader`, with `yfinance` as the default source for `BTC-USD`.
-- Canonical BTC OHLCV schema:
-  - `timestamp_utc`
-  - `open`
-  - `high`
-  - `low`
-  - `close`
-  - `volume`
-- BTC feature helpers:
-  - one-period simple returns
-  - one-period log returns
-  - rolling annualized realized volatility
-  - distance to target price in USD and percentage terms
-- Offline Phase 1 tests using mocked data sources.
+The uploaded Codex branch is:
 
-Polymarket scanning, probability models, strategy decisions, reports, paper trading, and CLI commands are planned but not implemented yet.
+```text
+https://github.com/MM-sheng/zeroleak-llm-proxy/tree/btc-pm-strategy
+```
+
+Clone the project branch directly with:
+
+```bash
+git clone --branch btc-pm-strategy https://github.com/MM-sheng/zeroleak-llm-proxy.git btc_pm_strategy
+```
+
+The default branch of `MM-sheng/zeroleak-llm-proxy` belongs to another project.
+Keep this BTC project on the `btc-pm-strategy` branch unless it is moved to a
+dedicated repository.
+
+## Current Status
+
+- Phase 9 is complete.
+- Phase 10 live trading is locked.
+- There is intentionally no active `NEXT` task while the only remaining phase is locked.
+- The project is paper-only and read-only for external trading systems.
+- The latest tracked report is `reports/updown_price_history_backtest_report.md`.
+- Local runtime cache under `data/updown_cache/` is ignored by Git and can be regenerated.
+
+## Supported Functionality
+
+- BTC OHLCV loading through `BTCPriceLoader`, with `yfinance` as the default
+  source for `BTC-USD`.
+- BTC feature helpers for returns, log returns, rolling realized volatility, and
+  distance to target price.
+- Read-only Polymarket Gamma market scanning and standardized BTC market schema.
+- BTC market question parsing for target, direction, deadline, and touch vs.
+  terminal event type.
+- Historical volatility, Monte Carlo GBM, bootstrap fat-tail, ensemble, and
+  calibration model helpers.
+- YES/NO edge, expected value, Kelly sizing, risk checks, and paper-only trade
+  decisions.
+- Synthetic BTC backtests and read-only BTC Up/Down historical backtest helpers.
+- Paper journal, mark-to-market, manual resolution, and local Markdown reports.
+- CLI entry points for scan, model, report, paper, backtest, Up/Down backtest,
+  and explain workflows.
 
 ## Install
 
@@ -52,6 +77,21 @@ python -m pytest
 
 The default system Python in this workspace may not have `pytest` installed until dependencies are installed.
 
+## CLI Usage
+
+All commands are paper-only. Commands that read live public data may depend on
+network and public API availability.
+
+```bash
+python -m src.main scan
+python -m src.main model --market-id MARKET_ID
+python -m src.main report
+python -m src.main paper --market-id MARKET_ID --question "..." --action HOLD --model-probability 0.5
+python -m src.main backtest
+python -m src.main updown-backtest --data-source price_history --policy first_seen
+python -m src.main explain --market-id MARKET_ID
+```
+
 ## BTC Data Usage
 
 Load BTC data from the default `BTC-USD` source:
@@ -76,33 +116,13 @@ features = add_realized_volatility(features, window=30, periods_per_year=365)
 features = add_distance_to_target_price(features, target_price=120000.0)
 ```
 
-## Planned Usage
-
-Future CLI commands:
-
-```bash
-python -m src.main scan
-python -m src.main model --market-id MARKET_ID
-python -m src.main report
-python -m src.main paper
-python -m src.main backtest
-python -m src.main explain --market-id MARKET_ID
-```
-
-These commands are planned and not active yet.
-
 ## Not Yet Supported
 
-- Polymarket Gamma API scanning.
-- Polymarket CLOB trading.
-- Wallet connection.
 - Live order placement.
-- Market question parsing.
-- Probability modeling.
-- Edge, EV, Kelly sizing, and trade decisions.
-- Backtesting.
-- Paper trading journal and reports.
-- CLI commands.
+- Wallet connection.
+- Real private-key handling.
+- Production live trading.
+- Any unattended execution that places orders.
 
 ## Safety
 
@@ -116,6 +136,19 @@ These commands are planned and not active yet.
 ## Paper Trading
 
 Paper trading means simulated decisions, simulated position sizes, and local journals. It does not place orders or connect to a wallet.
+
+## Handoff Files
+
+Future agents should read these files before editing:
+
+- `AGENTS.md`
+- `PROJECT_SPEC.md`
+- `TASKS.md`
+- `CONTEXT.md`
+- `DECISIONS.md`
+- `.collab/board.md`
+- `.collab/decisions.md`
+- latest file under `.collab/handoffs/`
 
 ## Non-Investment Advice
 

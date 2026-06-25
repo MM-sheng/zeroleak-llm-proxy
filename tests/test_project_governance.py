@@ -21,10 +21,14 @@ def test_required_governance_files_exist() -> None:
     assert missing == []
 
 
-def test_tasks_has_exactly_one_next() -> None:
+def test_tasks_has_valid_next_state() -> None:
     task_text = (ROOT / "TASKS.md").read_text(encoding="utf-8")
+    next_count = task_text.count("Status: NEXT")
+    locked_only = "## Phase 10: Live Trading Safety Layer, LOCKED" in task_text and "Status: LOCKED" in task_text
 
-    assert task_text.count("Status: NEXT") == 1
+    assert next_count in {0, 1}
+    if next_count == 0:
+        assert locked_only
 
 
 def test_env_example_defaults_to_no_live_trading() -> None:
@@ -32,4 +36,3 @@ def test_env_example_defaults_to_no_live_trading() -> None:
 
     assert "LIVE_TRADING=false" in env_text
     assert "POLYMARKET_PRIVATE_KEY=" in env_text
-
