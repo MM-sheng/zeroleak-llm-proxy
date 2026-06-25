@@ -5,18 +5,19 @@
 This project is currently uploaded here:
 
 ```text
-https://github.com/MM-sheng/zeroleak-llm-proxy/tree/btc-pm-strategy
+https://github.com/MM-sheng/btc-pm-strategy
 ```
 
 Use this remote and branch:
 
 ```text
-origin: https://github.com/MM-sheng/zeroleak-llm-proxy.git
-branch: btc-pm-strategy
+origin: https://github.com/MM-sheng/btc-pm-strategy.git
+branch: main
 ```
 
-The repository default branch contains a different project. Do not merge this
-branch into `main` unless the repository is intentionally repurposed.
+This project was originally staged as the `btc-pm-strategy` branch in
+`MM-sheng/zeroleak-llm-proxy`. That was a temporary holding location. The
+dedicated repository above is now the canonical home for BTC/Polymarket research.
 
 ## Project State
 

@@ -13,18 +13,18 @@ place real trades.
 The uploaded Codex branch is:
 
 ```text
-https://github.com/MM-sheng/zeroleak-llm-proxy/tree/btc-pm-strategy
+https://github.com/MM-sheng/btc-pm-strategy
 ```
 
-Clone the project branch directly with:
+Clone the project with:
 
 ```bash
-git clone --branch btc-pm-strategy https://github.com/MM-sheng/zeroleak-llm-proxy.git btc_pm_strategy
+git clone https://github.com/MM-sheng/btc-pm-strategy.git
 ```
 
-The default branch of `MM-sheng/zeroleak-llm-proxy` belongs to another project.
-Keep this BTC project on the `btc-pm-strategy` branch unless it is moved to a
-dedicated repository.
+This project was originally uploaded as the `btc-pm-strategy` branch of
+`MM-sheng/zeroleak-llm-proxy`. It now has its own repository so BTC/Polymarket
+research stays separate from the ZeroLeak LLM Proxy project.
 
 ## Current Status
 

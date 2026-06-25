@@ -57,7 +57,7 @@
 **主要路径**：
 
 - `/Users/m/Documents/Codex/2026-06-07/files-mentioned-by-the-user-txt-2/btc_pm_strategy`
-- GitHub: `https://github.com/MM-sheng/zeroleak-llm-proxy/tree/btc-pm-strategy`
+- GitHub: `https://github.com/MM-sheng/btc-pm-strategy`
 
 **已有资产**：
 
@@ -75,8 +75,8 @@
 
 **下一步**：
 
-1. 保持 `btc-pm-strategy` 分支可复现。
-2. 若要长期发展，应迁到独立仓库 `MM-sheng/btc-pm-strategy`。
+1. 保持独立仓库 `MM-sheng/btc-pm-strategy` 可复现。
+2. 旧的 `zeroleak-llm-proxy/tree/btc-pm-strategy` 只作为迁移来源参考。
 3. 新增真实交易前必须先完成 Phase 10 解锁条件。
 
 ## B. Polymarket / PM 资产线
@@ -302,8 +302,7 @@
 
 ## 当前优先级
 
-1. **先保存和整理资料**：本文件和原始总汇总已进入 `btc-pm-strategy` 分支的 `reports/`。
+1. **先保存和整理资料**：本文件和原始总汇总已进入 `btc-pm-strategy` 独立仓库的 `reports/`。
 2. **先分仓库，不急实盘**：不同资产线不要继续混在一个仓库分支里。
 3. **先回测再 paper，再 preflight**：任何 live 之前都要有可重复验证链路。
 4. **先处理人工 gate**：凭证、区域、账户权限、订阅和签名都不是代码能自动跳过的事。
-
